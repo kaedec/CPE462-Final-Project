@@ -1,0 +1,13 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY vending_machine IS
+
+	PORT(: IN;
+			: OUT);
+END vending_machine;
+
+ARCHITECTURE vending_machine_arch OF vending_machine IS
+BEGIN
+
+END vending_machine_arch;
