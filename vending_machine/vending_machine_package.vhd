@@ -12,13 +12,15 @@ PACKAGE vending_machine_package IS
 -------------------------------------------------------------------------------
 	TYPE C_STATE IS (Dime, Quarter, Dollar);
 -------------------------------------------------------------------------------
+--Record Information
+--Records are similar to structs in C or dictionaries in Python
 	TYPE PRODUCT_INFO IS RECORD
 		Product_Select: STD_LOGIC_VECTOR(17 DOWNTO 16);
 		Abbreviation: CHARACTER;
 		Price: NATURAL RANGE 85 TO 195;
 	END RECORD;
 -------------------------------------------------------------------------------
-	TYPE PRODUCT_ARRAY IS ARRAY (PROD_STATE) OF PRODUCT_INFO;
+--	TYPE PRODUCT_ARRAY IS ARRAY (PROD_STATE) OF PRODUCT_INFO;
 -------------------------------------------------------------------------------
 --Used for debouncing switches
 	COMPONENT debounce IS
@@ -29,13 +31,15 @@ PACKAGE vending_machine_package IS
 --Seven-Segment Display logic
 	FUNCTION dispSSD (SIGNAL S: NATURAL) RETURN STD_LOGIC_VECTOR;
 -------------------------------------------------------------------------------
+	FUNCTION dispSSD_A (SIGNAL S: CHARACTER) RETURN STD_LOGIC_VECTOR;
+-------------------------------------------------------------------------------
 --Custom edge checker w/o 'EDGE attribute, also checks for ='0' because these
 --push buttons are all active low
 	FUNCTION button_pressed (SIGNAL old_btn, btn: STD_LOGIC) RETURN BOOLEAN;
 -------------------------------------------------------------------------------
-	PROCEDURE dispProduct (SIGNAL Sel: IN STD_LOGIC_VECTOR(17 DOWNTO 16);
-									SIGNAL Btn: IN STD_LOGIC;
-									SIGNAL H5, H2, H1, H0: OUT STD_LOGIC_VECTOR(0 TO 6));
+--	PROCEDURE dispProduct (SIGNAL Sel: IN STD_LOGIC_VECTOR(17 DOWNTO 16);
+--									SIGNAL Btn: IN STD_LOGIC;
+--									SIGNAL H5, H2, H1, H0: OUT STD_LOGIC_VECTOR(0 TO 6));
 -------------------------------------------------------------------------------
 END vending_machine_package;
 -------------------------------------------------------------------------------
@@ -60,11 +64,29 @@ PACKAGE BODY vending_machine_package IS
 		WHEN 7 => F := "0001111";
 		WHEN 8 => F := "0000000";
 		WHEN 9 => F := "0000100";
-		WHEN OTHERS => F := "1111110";
+		WHEN OTHERS => F := "0110110";
 	END CASE;
 	
 	RETURN F;
 	END FUNCTION dispSSD;
+-------------------------------------------------------------------------------
+	FUNCTION dispSSD_A (SIGNAL S: CHARACTER) RETURN STD_LOGIC_VECTOR IS
+
+	VARIABLE F: STD_LOGIC_VECTOR(0 TO 6);
+	
+	BEGIN
+	
+	CASE S IS
+		WHEN 'P' => F := "0011000";
+		WHEN 'G' => F := "0100000";
+		WHEN 'C'	=> F := "0110001";
+		WHEN 'b' => F := "1100000";
+		WHEN 'I' => F := "1111110";
+		WHEN OTHERS => F := "0110110";
+	END CASE;
+	
+	RETURN F;
+	END FUNCTION dispSSD_A;
 -------------------------------------------------------------------------------
 	FUNCTION button_pressed (SIGNAL old_btn, btn: STD_LOGIC) RETURN BOOLEAN IS
 	
@@ -78,20 +100,20 @@ PACKAGE BODY vending_machine_package IS
 	
 	END FUNCTION button_pressed;
 -------------------------------------------------------------------------------
-	PROCEDURE dispProduct (SIGNAL Sel: IN PROD_STATE;
-									SIGNAL Btn: IN STD_LOGIC;
-									SIGNAL H5, H2, H1, H0: OUT STD_LOGIC_VECTOR(0 TO 6)) IS
-	BEGIN
-	
-	IF(Btn = '0') THEN
-		CASE Sel IS
-			WHEN Pepsi =>
-			WHEN Gum =>
-			WHEN COffee =>
-			WHEN Water =>
-		END CASE;
-	END IF;
-	
-	END PROCEDURE dispProduct;
+--	PROCEDURE dispProduct (SIGNAL Sel: IN PROD_STATE;
+--									SIGNAL Btn: IN STD_LOGIC;
+--									SIGNAL H2, H1, H0: OUT NATURAL RANGE 0 TO 9) IS
+--	BEGIN
+--	
+--	IF(Btn = '0') THEN
+--		CASE Sel IS
+--			WHEN Pepsi =>
+--			WHEN Gum =>
+--			WHEN COffee =>
+--			WHEN Water =>
+--		END CASE;
+--	END IF;
+--	
+--	END PROCEDURE dispProduct;
 -------------------------------------------------------------------------------
 END vending_machine_package;

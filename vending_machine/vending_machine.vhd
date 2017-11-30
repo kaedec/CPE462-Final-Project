@@ -23,15 +23,22 @@ ARCHITECTURE vending_machine_arch OF vending_machine IS
 --DECLARATIONS
 
 --Product Information
-CONSTANT product_list: PRODUCT_ARRAY := (
+--PRODUCT_SELECT, ABBREVIATION, PRICE
+--CONSTANT product_list: PRODUCT_ARRAY := (
+--	Pepsi => ("00", 'P', 145),
+--	Gum => ("01", 'G', 85),
+--	Coffee => ("10", 'C', 195),
+--	Water => ("11", 'b', 135)
+--);
+CONSTANT Pepsi: PRODUCT_INFO :=
+	("00", 'P', 145);
+CONSTANT Gum: PRODUCT_INFO :=
+	("01", 'G', 85);
+CONSTANT Coffee: PRODUCT_INFO :=
+	("10", 'C', 195);
+CONSTANT Water: PRODUCT_INFO :=
+	("11", 'b', 135);
 
-	Pepsi => ("00", 'P', 145),
-	Gum => ("01", 'G', 85),
-	Coffee => ("10", 'C', 195),
-	Water => ("11", 'b', 135)
-
-);
-	
 --Debounced Push Buttons
 SIGNAL db_choose_product, db_choose_coin, db_reset: STD_LOGIC;
 
@@ -45,6 +52,10 @@ SIGNAL old_choose_product, old_choose_coin: STD_LOGIC := '0';
 
 --Costs
 SIGNAL cost_amt: NATURAL RANGE 85 TO 195 := 85;
+
+--Hex Display Signals
+SIGNAL hex5: CHARACTER;
+SIGNAL hex2, hex1, hex0: NATURAL RANGE 0 TO 9;
 -------------------------------------------------------------------------------
 --BEHAVIOR
 
@@ -67,14 +78,26 @@ ELSIF(RISING_EDGE(clock_50MHz)) THEN
 	old_choose_product <= db_choose_product;	--These two are used as dummies because
 	old_choose_coin <= db_choose_coin;			--we cannot have signals depend on two "clock" 'EDGES
 	
+	IF(button_pressed(old_choose_product, db_choose_product)) THEN
+	
+		CASE product_select IS
+			WHEN Pepsi.product_select =>
+				hex5 <= Pepsi.abbreviation;
+			WHEN Gum.product_select =>
+			WHEN Coffee.product_select =>
+			WHEN Water.product_select =>
+		
+		END CASE;
+	
+	END IF;
 
 END IF;
 
 END PROCESS;
 -------------------------------------------------------------------------------
---p_name_abbrv <= dispSSD();
---coin_display2 <= dispSSD();
---coin_display1 <= dispSSD();
---coin_display0 <= dispSSD();
+p_name_abbrv <= dispSSD_A(hex5);
+--coin_display2 <= dispSSD(hex2);
+--coin_display1 <= dispSSD(hex1);
+--coin_display0 <= dispSSD(hex0);
 -------------------------------------------------------------------------------
 END vending_machine_arch;
