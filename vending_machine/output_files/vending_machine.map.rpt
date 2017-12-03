@@ -1,5 +1,5 @@
-Analysis & Elaboration report for vending_machine
-Fri Dec 01 11:31:28 2017
+Analysis & Synthesis report for vending_machine
+Sun Dec 03 13:02:42 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -7,12 +7,26 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "debounce:key0"
-  6. Port Connectivity Checks: "debounce:key2"
-  7. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |vending_machine|machine_state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Div0
+ 16. Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Mod1
+ 17. Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Mod2
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -37,43 +51,27 @@ agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Fri Dec 01 11:31:28 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 03 13:02:41 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 904                                         ;
+;     Total combinational functions  ; 899                                         ;
+;     Dedicated logic registers      ; 210                                         ;
+; Total registers                    ; 210                                         ;
+; Total pins                         ; 37                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                      ;
+; Analysis & Synthesis Settings                                                                                        ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -158,57 +156,449 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debounce:key0"                                                                           ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; debounced ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debounce:key2"                                                                           ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; debounced ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; vending_machine.vhd              ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd         ;         ;
+; debounce.vhd                     ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd                ;         ;
+; vending_machine_package.vhd      ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd ;         ;
+; money_indexer.vhd                ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd           ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf                                  ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc                                 ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc                             ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                                  ;         ;
+; db/lpm_divide_ccm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_ccm.tdf       ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_1nh.tdf  ;         ;
+; db/alt_u_div_m9f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_m9f.tdf        ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf          ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf          ;         ;
+; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_vim.tdf       ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf  ;         ;
+; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf        ;         ;
+; db/lpm_divide_sim.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_sim.tdf       ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf  ;         ;
+; db/alt_u_div_s6f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf        ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimated Total logic elements              ; 904               ;
+;                                             ;                   ;
+; Total combinational functions               ; 899               ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 301               ;
+;     -- 3 input functions                    ; 143               ;
+;     -- <=2 input functions                  ; 455               ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 559               ;
+;     -- arithmetic mode                      ; 340               ;
+;                                             ;                   ;
+; Total registers                             ; 210               ;
+;     -- Dedicated logic registers            ; 210               ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 37                ;
+;                                             ;                   ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; clock_50MHz~input ;
+; Maximum fan-out                             ; 210               ;
+; Total fan-out                               ; 3152              ;
+; Average fan-out                             ; 2.66              ;
++---------------------------------------------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |vending_machine                          ; 899 (332)           ; 210 (111)                 ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |vending_machine                                                                                                                        ; vending_machine     ; work         ;
+;    |debounce:key0|                        ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|debounce:key0                                                                                                          ; debounce            ; work         ;
+;    |debounce:key2|                        ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|debounce:key2                                                                                                          ; debounce            ; work         ;
+;    |debounce:key3|                        ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|debounce:key3                                                                                                          ; debounce            ; work         ;
+;    |money_indexer:indexing|               ; 429 (15)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing                                                                                                 ; money_indexer       ; work         ;
+;       |lpm_divide:Div0|                   ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_vim:auto_generated|  ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div0|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim      ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                |alt_u_div_27f:divider|    ; 74 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ; alt_u_div_27f       ; work         ;
+;       |lpm_divide:Div1|                   ; 88 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_sim:auto_generated|  ; 88 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div1|lpm_divide_sim:auto_generated                                                   ; lpm_divide_sim      ; work         ;
+;             |sign_div_unsign_klh:divider| ; 88 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider                       ; sign_div_unsign_klh ; work         ;
+;                |alt_u_div_s6f:divider|    ; 88 (88)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider ; alt_u_div_s6f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ccm:auto_generated|  ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod0|lpm_divide_ccm:auto_generated                                                   ; lpm_divide_ccm      ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                       ; sign_div_unsign_1nh ; work         ;
+;                |alt_u_div_m9f:divider|    ; 26 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod0|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider ; alt_u_div_m9f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 99 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ccm:auto_generated|  ; 99 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod1|lpm_divide_ccm:auto_generated                                                   ; lpm_divide_ccm      ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 99 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                       ; sign_div_unsign_1nh ; work         ;
+;                |alt_u_div_m9f:divider|    ; 99 (99)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod1|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider ; alt_u_div_m9f       ; work         ;
+;       |lpm_divide:Mod2|                   ; 127 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ccm:auto_generated|  ; 127 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod2|lpm_divide_ccm:auto_generated                                                   ; lpm_divide_ccm      ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 127 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider                       ; sign_div_unsign_1nh ; work         ;
+;                |alt_u_div_m9f:divider|    ; 127 (127)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|money_indexer:indexing|lpm_divide:Mod2|lpm_divide_ccm:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_m9f:divider ; alt_u_div_m9f       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |vending_machine|machine_state                                                                                     ;
++-------------------------------+------------------------+-------------------------------+----------------------+--------------------+
+; Name                          ; machine_state.Delivery ; machine_state.UserTransaction ; machine_state.Cancel ; machine_state.Idle ;
++-------------------------------+------------------------+-------------------------------+----------------------+--------------------+
+; machine_state.Idle            ; 0                      ; 0                             ; 0                    ; 0                  ;
+; machine_state.Cancel          ; 0                      ; 0                             ; 1                    ; 1                  ;
+; machine_state.UserTransaction ; 0                      ; 1                             ; 0                    ; 1                  ;
+; machine_state.Delivery        ; 1                      ; 0                             ; 0                    ; 1                  ;
++-------------------------------+------------------------+-------------------------------+----------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++----------------------------------------------------+-------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------+------------------------+
+; debounce:key3|old_btn                              ; debounce:key3|process_0 ; yes                    ;
+; debounce:key2|old_btn                              ; debounce:key2|process_0 ; yes                    ;
+; debounce:key0|old_btn                              ; debounce:key0|process_0 ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                         ;                        ;
++----------------------------------------------------+-------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; hex5[7]                               ; Stuck at GND due to stuck port data_in ;
+; cost_amt[0]                           ; Stuck at VCC due to stuck port data_in ;
+; cost_amt[3,5]                         ; Stuck at GND due to stuck port data_in ;
+; cost_amt[4]                           ; Merged with cost_amt[1]                ;
+; delivery_count[0]                     ; Merged with dLed                       ;
+; Total Number of Removed Registers = 6 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 210   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 96    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; cost_amt[6]                            ; 2       ;
+; cost_amt[2]                            ; 2       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 6:1                ; 31 bits   ; 124 LEs       ; 31 LEs               ; 93 LEs                 ; Yes        ; |vending_machine|count[25]       ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vending_machine|price_disp[5]   ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 12 LEs               ; 9 LEs                  ; Yes        ; |vending_machine|price_disp[7]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |vending_machine|paid_amt        ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |vending_machine|temp_price_disp ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |vending_machine|Selector20      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 7              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_vim ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_sim ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: money_indexer:indexing|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ccm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 37                          ;
+; cycloneiii_ff         ; 210                         ;
+;     CLR               ; 96                          ;
+;     ENA               ; 88                          ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 903                         ;
+;     arith             ; 340                         ;
+;         2 data inputs ; 222                         ;
+;         3 data inputs ; 118                         ;
+;     normal            ; 563                         ;
+;         0 data inputs ; 23                          ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 196                         ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 301                         ;
+;                       ;                             ;
+; Max LUT depth         ; 28.30                       ;
+; Average LUT depth     ; 12.85                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Dec 01 11:31:12 2017
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine --analysis_and_elaboration
+    Info: Processing started: Sun Dec 03 13:02:22 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine.vhd
-    Info (12022): Found design unit 1: vending_machine-vending_machine_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 22
-    Info (12023): Found entity 1: vending_machine File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 7
+    Info (12022): Found design unit 1: vending_machine-vending_machine_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 22
+    Info (12023): Found entity 1: vending_machine File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
-    Info (12022): Found design unit 1: debounce-debounce_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 10
-    Info (12023): Found entity 1: debounce File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 4
+    Info (12022): Found design unit 1: debounce-debounce_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 10
+    Info (12023): Found entity 1: debounce File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 4
 Info (12021): Found 2 design units, including 0 entities, in source file vending_machine_package.vhd
-    Info (12022): Found design unit 1: vending_machine_package File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
-    Info (12022): Found design unit 2: vending_machine_package-body File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 44
+    Info (12022): Found design unit 1: vending_machine_package File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
+    Info (12022): Found design unit 2: vending_machine_package-body File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 49
 Info (12021): Found 2 design units, including 1 entities, in source file money_indexer.vhd
-    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 11
-    Info (12023): Found entity 1: money_indexer File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 5
+    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 11
+    Info (12023): Found entity 1: money_indexer File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 5
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(40): object "db_reset" assigned a value but never read File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 40
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(48): object "old_choose_coin" assigned a value but never read File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 48
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(51): object "cost_amt" assigned a value but never read File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 51
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 67
-Warning (10631): VHDL Process Statement warning at debounce.vhd(20): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 20
-Info (10041): Inferred latch for "old_btn" at debounce.vhd(27) File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 27
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 667 megabytes
-    Info: Processing ended: Fri Dec 01 11:31:28 2017
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:35
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 68
+Warning (10631): VHDL Process Statement warning at debounce.vhd(20): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 20
+Info (10041): Inferred latch for "old_btn" at debounce.vhd(27) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 27
+Info (12128): Elaborating entity "money_indexer" for hierarchy "money_indexer:indexing" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 73
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 21
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ccm.tdf
+    Info (12023): Found entity 1: lpm_divide_ccm File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_ccm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_1nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m9f.tdf
+    Info (12023): Found entity 1: alt_u_div_m9f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_m9f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vim.tdf
+    Info (12023): Found entity 1: lpm_divide_vim File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_vim.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
+    Info (12023): Found entity 1: alt_u_div_27f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_sim.tdf
+    Info (12023): Found entity 1: lpm_divide_sim File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_sim.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_klh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s6f.tdf
+    Info (12023): Found entity 1: alt_u_div_s6f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 21
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod2" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 21
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (13012): Latch debounce:key3|old_btn has unsafe behavior File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal choose_product File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 11
+Warning (13012): Latch debounce:key2|old_btn has unsafe behavior File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal choose_coin File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 12
+Warning (13012): Latch debounce:key0|old_btn has unsafe behavior File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1090 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 1053 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 692 megabytes
+    Info: Processing ended: Sun Dec 03 13:02:42 2017
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:26
 
 

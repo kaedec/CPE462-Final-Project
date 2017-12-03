@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/output_files/") File("vending_machine.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/output_files/") File("vending_machine.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

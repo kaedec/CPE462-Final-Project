@@ -10,7 +10,14 @@ END money_indexer;
 
 ARCHITECTURE money_indexer_arch OF money_indexer IS
 BEGIN
-	out_h <= input MOD 1000 / 100;
-	out_t <= input MOD 100 / 10;
-	out_o <= input MOD 10 / 1;
+
+	out_h <= 10 WHEN (input=999) ELSE
+				input MOD 1000 / 100;
+				
+	out_t <= 10 WHEN (input=999) ELSE
+				input MOD 100 / 10;
+	
+	out_o <= 10 WHEN (input=999) ELSE
+				input MOD 10 / 1;
+	
 END money_indexer_arch;

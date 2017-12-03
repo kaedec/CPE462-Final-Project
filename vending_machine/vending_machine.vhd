@@ -45,7 +45,7 @@ SIGNAL product_state: PROD_STATE;
 SIGNAL coin_state: C_STATE;
 
 --Previous values for push buttons
-SIGNAL old_choose_product, old_choose_coin: STD_LOGIC := '0';
+SIGNAL old_choose_product, old_choose_coin, old_reset: STD_LOGIC := '0';
 
 --Costs
 SIGNAL cost_amt: NATURAL RANGE 85 TO 195 := 85;
@@ -71,12 +71,17 @@ key0: debounce PORT MAP (reset, clock_50MHz, db_reset);
 
 --Index into price for display
 indexing: money_indexer PORT MAP (price_disp, hex2, hex1, hex0);
+
 -------------------------------------------------------------------------------
 
 PROCESS(clock_50MHz, reset)
 
+--For time counting
 VARIABLE count: NATURAL := 0;
 VARIABLE delivery_count: NATURAL := 0;
+
+VARIABLE temp_price_disp: INTEGER RANGE 0 TO 999 := 0;
+VARIABLE transaction_time: STD_LOGIC := '0';
 
 BEGIN
 
@@ -84,48 +89,102 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 	
 	old_choose_product <= db_choose_product;	--These are used as dummies because we
 	old_choose_coin <= db_choose_coin;			--cannot have signals depend on two "clock" 'EDGES
+	old_reset <= db_reset;
+	
 	cASE machine_state IS
+-------------------------------------------------------------------------------
 		WHEN Idle =>
 		
+			paid_amt <= 0;
+			
 			IF(button_pressed(old_choose_product, db_choose_product)) THEN
 				CASE product_select IS
 					WHEN Pepsi.product_select =>
 						hex5 <= Pepsi.abbreviation;
 						cost_amt <= Pepsi.price;
+						price_disp <= Pepsi.price;
 
 					WHEN Gum.product_select =>
 						hex5 <= Gum.abbreviation;
 						cost_amt <= Gum.price;
+						price_disp <= Gum.price;
 
 					WHEN Coffee.product_select =>
 						hex5 <= Coffee.abbreviation;
 						cost_amt <= Coffee.price;
+						price_disp <= Coffee.price;
 
 					WHEN Water.product_select =>
 						hex5 <= Water.abbreviation;
 						cost_amt <= Water.price;
+						price_disp <= Water.price;
 
 				END CASE;
 				machine_state <= UserTransaction;
 			ELSE
 				hex5 <= 'I';
-				hex2 <= 10; hex1 <= 10; hex0 <= 10;
+				price_disp <= 999;
 			END IF;
-			
+-------------------------------------------------------------------------------
 		WHEN Cancel =>
 			count := count+1;
+			
+			price_disp <= paid_amt;
+			
 			IF(count = divider*10) THEN
 				count := 0;
 				machine_state <= Idle;
 			END IF;
-			
+-------------------------------------------------------------------------------
 		WHEN UserTransaction =>
 		
-			IF(reset = '0') THEN
+			IF(button_pressed(old_reset, db_reset)) THEN
 				machine_state <= Cancel;
 			END IF;
+			
+			IF(paid_amt >= cost_amt) THEN
+				machine_state <= Delivery;
+			END IF;
+			
+			IF(button_pressed(old_choose_coin, db_choose_coin)) THEN
+				CASE coin_select IS
+				
+					WHEN "00" => -- Invalid
+						IF(price_disp /= 999) THEN
+							temp_price_disp := price_disp;
+							price_disp <= 999;
+							transaction_time := '1';
+						END IF;
+						
+					WHEN "01" => -- Dime
+						paid_amt <= paid_amt + 10;
+						price_disp <= price_disp - 10;
+						
+					WHEN "10" => -- Qaurter
+						paid_amt <= paid_amt + 25;
+						price_disp <= price_disp - 25;
+						
+					WHEN "11" => -- Dollar
+						paid_amt <= paid_amt + 100;
+						price_disp <= price_disp - 100;
+						
+				END CASE;
+				
+			END IF;
+			
+			IF(transaction_time = '1') THEN
+				count := count+1;
+				IF(count = divider*10) THEN
+					count := 0;
+					price_disp <= temp_price_disp;
+					transaction_time := '0';
+				END IF;
+			END IF;
+-------------------------------------------------------------------------------
 		WHEN Delivery =>
-		
+			
+			price_disp <= paid_amt - cost_amt;
+			
 			count := count+1;
 			IF(count=divider*2) THEN
 			
@@ -135,11 +194,13 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 				
 				IF(delivery_count=10) THEN
 					delivery_count := 0;
+					
 					machine_state <= Idle;
 				END IF;
 			END IF;
+-------------------------------------------------------------------------------
 	END CASE;
-	
+
 END IF;
 
 END PROCESS;

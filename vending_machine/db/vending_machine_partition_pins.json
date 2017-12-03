@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "product_delivery",
+					"strict" : false
+				},
+				{
 					"name" : "p_name_abbrv[6]",
 					"strict" : false
 				},
@@ -116,6 +120,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "clock_50MHz",
+					"strict" : false
+				},
+				{
 					"name" : "product_select[16]",
 					"strict" : false
 				},
@@ -124,11 +132,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock_50MHz",
+					"name" : "coin_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_select[0]",
 					"strict" : false
 				},
 				{
 					"name" : "choose_product",
+					"strict" : false
+				},
+				{
+					"name" : "choose_coin",
 					"strict" : false
 				},
 				{

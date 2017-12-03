@@ -1,5 +1,5 @@
 Flow report for vending_machine
-Fri Dec 01 11:31:28 2017
+Sun Dec 03 13:03:57 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 01 11:31:28 2017       ;
+; Flow Status                        ; Successful - Sun Dec 03 13:03:39 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 906 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 900 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 210 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 210                                         ;
+; Total pins                         ; 37 / 529 ( 7 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/01/2017 11:31:13 ;
+; Start date & time ; 12/03/2017 13:02:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vending_machine     ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 88623635123884.151214587301936         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 84440835730558.151232414211904         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -89,29 +89,38 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:16     ; 1.0                     ; 667 MB              ; 00:00:35                           ;
-; Total                  ; 00:00:16     ; --                      ; --                  ; 00:00:35                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 692 MB              ; 00:00:26                           ;
+; Fitter                    ; 00:00:29     ; 1.0                     ; 1593 MB             ; 00:00:23                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 568 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.0                     ; 733 MB              ; 00:00:02                           ;
+; Total                     ; 00:01:07     ; --                      ; --                  ; 00:00:54                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; PC4585           ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; Katelyn-PC       ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; Katelyn-PC       ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; Katelyn-PC       ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; Katelyn-PC       ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine
+quartus_fit --read_settings_files=off --write_settings_files=off vending_machine -c vending_machine
+quartus_asm --read_settings_files=off --write_settings_files=off vending_machine -c vending_machine
+quartus_sta vending_machine -c vending_machine
 
 
 
