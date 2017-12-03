@@ -1,0 +1,12 @@
+process is
+begin
+  report "  9  mod   5  = " & integer'image(9 mod 5);
+  report "  9  rem   5  = " & integer'image(9 rem 5);
+  report "  9  mod (-5) = " & integer'image(9 mod (-5));
+  report "  9  rem (-5) = " & integer'image(9 rem (-5));
+  report "(-9) mod   5  = " & integer'image((-9) mod 5);
+  report "(-9) rem   5  = " & integer'image((-9) rem 5);
+  report "(-9) mod (-5) = " & integer'image((-9) mod (-5));
+  report "(-9) rem (-5) = " & integer'image((-9) rem (-5));
+  wait;
+end process;

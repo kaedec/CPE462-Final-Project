@@ -1,0 +1,141 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "p_name_abbrv[6]",
+					"strict" : false
+				},
+				{
+					"name" : "p_name_abbrv[5]",
+					"strict" : false
+				},
+				{
+					"name" : "p_name_abbrv[4]",
+					"strict" : false
+				},
+				{
+					"name" : "p_name_abbrv[3]",
+					"strict" : false
+				},
+				{
+					"name" : "p_name_abbrv[2]",
+					"strict" : false
+				},
+				{
+					"name" : "p_name_abbrv[1]",
+					"strict" : false
+				},
+				{
+					"name" : "p_name_abbrv[0]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "coin_display0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "product_select[16]",
+					"strict" : false
+				},
+				{
+					"name" : "product_select[17]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "choose_product",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

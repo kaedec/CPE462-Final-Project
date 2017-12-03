@@ -22,14 +22,11 @@ END vending_machine;
 ARCHITECTURE vending_machine_arch OF vending_machine IS
 --DECLARATIONS
 
+--Clock Information
+CONSTANT divider: INTEGER := 25000000; --1 second clock
+
 --Product Information
 --PRODUCT_SELECT, ABBREVIATION, PRICE
---CONSTANT product_list: PRODUCT_ARRAY := (
---	Pepsi => ("00", 'P', 145),
---	Gum => ("01", 'G', 85),
---	Coffee => ("10", 'C', 195),
---	Water => ("11", 'b', 135)
---);
 CONSTANT Pepsi: PRODUCT_INFO :=
 	("00", 'P', 145);
 CONSTANT Gum: PRODUCT_INFO :=
@@ -52,10 +49,16 @@ SIGNAL old_choose_product, old_choose_coin: STD_LOGIC := '0';
 
 --Costs
 SIGNAL cost_amt: NATURAL RANGE 85 TO 195 := 85;
+SIGNAL paid_amt: INTEGER RANGE 0 TO 999 := 0;
+SIGNAL return_amt: INTEGER RANGE 0 TO 999 := 0;
+SIGNAL price_disp: INTEGER RANGE 0 TO 999 := 0;
 
 --Hex Display Signals
 SIGNAL hex5: CHARACTER;
-SIGNAL hex2, hex1, hex0: NATURAL RANGE 0 TO 9;
+SIGNAL hex2, hex1, hex0: NATURAL RANGE 0 TO 10;
+
+--Product Delivery LED
+SIGNAL dLed: STD_LOGIC := '0';
 -------------------------------------------------------------------------------
 --BEHAVIOR
 
@@ -65,39 +68,87 @@ BEGIN
 key3: debounce PORT MAP (choose_product, clock_50MHz, db_choose_product);
 key2: debounce PORT MAP (choose_coin, clock_50MHz, db_choose_coin);
 key0: debounce PORT MAP (reset, clock_50MHz, db_reset);
+
+--Index into price for display
+indexing: money_indexer PORT MAP (price_disp, hex2, hex1, hex0);
 -------------------------------------------------------------------------------
 
 PROCESS(clock_50MHz, reset)
 
+VARIABLE count: NATURAL := 0;
+VARIABLE delivery_count: NATURAL := 0;
+
 BEGIN
 
-IF(reset = '0') THEN
-	machine_state <= Idle;
-ELSIF(RISING_EDGE(clock_50MHz)) THEN
+IF(RISING_EDGE(clock_50MHz)) THEN
 	
-	old_choose_product <= db_choose_product;	--These two are used as dummies because
-	old_choose_coin <= db_choose_coin;			--we cannot have signals depend on two "clock" 'EDGES
-	
-	IF(button_pressed(old_choose_product, db_choose_product)) THEN
-	
-		CASE product_select IS
-			WHEN Pepsi.product_select =>
-				hex5 <= Pepsi.abbreviation;
-			WHEN Gum.product_select =>
-			WHEN Coffee.product_select =>
-			WHEN Water.product_select =>
+	old_choose_product <= db_choose_product;	--These are used as dummies because we
+	old_choose_coin <= db_choose_coin;			--cannot have signals depend on two "clock" 'EDGES
+	cASE machine_state IS
+		WHEN Idle =>
 		
-		END CASE;
-	
-	END IF;
+			IF(button_pressed(old_choose_product, db_choose_product)) THEN
+				CASE product_select IS
+					WHEN Pepsi.product_select =>
+						hex5 <= Pepsi.abbreviation;
+						cost_amt <= Pepsi.price;
 
+					WHEN Gum.product_select =>
+						hex5 <= Gum.abbreviation;
+						cost_amt <= Gum.price;
+
+					WHEN Coffee.product_select =>
+						hex5 <= Coffee.abbreviation;
+						cost_amt <= Coffee.price;
+
+					WHEN Water.product_select =>
+						hex5 <= Water.abbreviation;
+						cost_amt <= Water.price;
+
+				END CASE;
+				machine_state <= UserTransaction;
+			ELSE
+				hex5 <= 'I';
+				hex2 <= 10; hex1 <= 10; hex0 <= 10;
+			END IF;
+			
+		WHEN Cancel =>
+			count := count+1;
+			IF(count = divider*10) THEN
+				count := 0;
+				machine_state <= Idle;
+			END IF;
+			
+		WHEN UserTransaction =>
+		
+			IF(reset = '0') THEN
+				machine_state <= Cancel;
+			END IF;
+		WHEN Delivery =>
+		
+			count := count+1;
+			IF(count=divider*2) THEN
+			
+				dLed <= NOT dLed;
+				count := 0;
+				delivery_count := delivery_count+1;
+				
+				IF(delivery_count=10) THEN
+					delivery_count := 0;
+					machine_state <= Idle;
+				END IF;
+			END IF;
+	END CASE;
+	
 END IF;
 
 END PROCESS;
 -------------------------------------------------------------------------------
+--Concurrent output declarations
 p_name_abbrv <= dispSSD_A(hex5);
---coin_display2 <= dispSSD(hex2);
---coin_display1 <= dispSSD(hex1);
---coin_display0 <= dispSSD(hex0);
+coin_display2 <= dispSSD(hex2);
+coin_display1 <= dispSSD(hex1);
+coin_display0 <= dispSSD(hex0);
+product_delivery <= dLed;
 -------------------------------------------------------------------------------
 END vending_machine_arch;

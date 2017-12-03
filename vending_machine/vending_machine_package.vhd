@@ -28,6 +28,11 @@ PACKAGE vending_machine_package IS
 				debounced: OUT STD_LOGIC);
 	END COMPONENT;
 -------------------------------------------------------------------------------
+	COMPONENT money_indexer IS
+		PORT(input: IN NATURAL RANGE 0 TO 999;
+			out_h, out_t, out_o: OUT NATURAL RANGE 0 TO 10);
+	END COMPONENT;
+-------------------------------------------------------------------------------
 --Seven-Segment Display logic
 	FUNCTION dispSSD (SIGNAL S: NATURAL) RETURN STD_LOGIC_VECTOR;
 -------------------------------------------------------------------------------
@@ -36,10 +41,6 @@ PACKAGE vending_machine_package IS
 --Custom edge checker w/o 'EDGE attribute, also checks for ='0' because these
 --push buttons are all active low
 	FUNCTION button_pressed (SIGNAL old_btn, btn: STD_LOGIC) RETURN BOOLEAN;
--------------------------------------------------------------------------------
---	PROCEDURE dispProduct (SIGNAL Sel: IN STD_LOGIC_VECTOR(17 DOWNTO 16);
---									SIGNAL Btn: IN STD_LOGIC;
---									SIGNAL H5, H2, H1, H0: OUT STD_LOGIC_VECTOR(0 TO 6));
 -------------------------------------------------------------------------------
 END vending_machine_package;
 -------------------------------------------------------------------------------
@@ -64,6 +65,7 @@ PACKAGE BODY vending_machine_package IS
 		WHEN 7 => F := "0001111";
 		WHEN 8 => F := "0000000";
 		WHEN 9 => F := "0000100";
+		WHEN 10 => F := "1111110";
 		WHEN OTHERS => F := "0110110";
 	END CASE;
 	
@@ -99,21 +101,5 @@ PACKAGE BODY vending_machine_package IS
 	END IF;
 	
 	END FUNCTION button_pressed;
--------------------------------------------------------------------------------
---	PROCEDURE dispProduct (SIGNAL Sel: IN PROD_STATE;
---									SIGNAL Btn: IN STD_LOGIC;
---									SIGNAL H2, H1, H0: OUT NATURAL RANGE 0 TO 9) IS
---	BEGIN
---	
---	IF(Btn = '0') THEN
---		CASE Sel IS
---			WHEN Pepsi =>
---			WHEN Gum =>
---			WHEN COffee =>
---			WHEN Water =>
---		END CASE;
---	END IF;
---	
---	END PROCEDURE dispProduct;
 -------------------------------------------------------------------------------
 END vending_machine_package;

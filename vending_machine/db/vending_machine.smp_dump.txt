@@ -1,0 +1,7 @@
+
+State Machine - |vending_machine|machine_state
+Name machine_state.Delivery machine_state.UserTransaction machine_state.Cancel machine_state.Idle 
+machine_state.Idle 0 0 0 0 
+machine_state.Cancel 0 0 1 1 
+machine_state.UserTransaction 0 1 0 1 
+machine_state.Delivery 1 0 0 1 

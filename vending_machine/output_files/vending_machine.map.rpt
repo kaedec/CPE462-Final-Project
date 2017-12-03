@@ -1,5 +1,5 @@
 Analysis & Elaboration report for vending_machine
-Wed Nov 29 19:39:36 2017
+Fri Dec 01 11:31:28 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Wed Nov 29 19:39:36 2017       ;
+; Analysis & Elaboration Status      ; Successful - Fri Dec 01 11:31:28 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
@@ -61,8 +61,8 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -182,38 +182,33 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Nov 29 19:39:16 2017
+    Info: Processing started: Fri Dec 01 11:31:12 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine.vhd
-    Info (12022): Found design unit 1: vending_machine-vending_machine_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 22
-    Info (12023): Found entity 1: vending_machine File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 7
+    Info (12022): Found design unit 1: vending_machine-vending_machine_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 22
+    Info (12023): Found entity 1: vending_machine File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
-    Info (12022): Found design unit 1: debounce-debounce_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 10
-    Info (12023): Found entity 1: debounce File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 4
+    Info (12022): Found design unit 1: debounce-debounce_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 10
+    Info (12023): Found entity 1: debounce File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 4
 Info (12021): Found 2 design units, including 0 entities, in source file vending_machine_package.vhd
-    Info (12022): Found design unit 1: vending_machine_package File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
-    Info (12022): Found design unit 2: vending_machine_package-body File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 48
+    Info (12022): Found design unit 1: vending_machine_package File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
+    Info (12022): Found design unit 2: vending_machine_package-body File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 44
+Info (12021): Found 2 design units, including 1 entities, in source file money_indexer.vhd
+    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 11
+    Info (12023): Found entity 1: money_indexer File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 5
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at vending_machine.vhd(15): used implicit default value for signal "product_delivery" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 15
-Warning (10541): VHDL Signal Declaration warning at vending_machine.vhd(17): used implicit default value for signal "coin_display2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 17
-Warning (10541): VHDL Signal Declaration warning at vending_machine.vhd(17): used implicit default value for signal "coin_display1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 17
-Warning (10541): VHDL Signal Declaration warning at vending_machine.vhd(17): used implicit default value for signal "coin_display0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 17
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(43): object "db_reset" assigned a value but never read File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 43
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(46): object "machine_state" assigned a value but never read File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 46
-Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(51): object "old_choose_coin" assigned a value but never read File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 51
-Info (10041): Inferred latch for "machine_state.Delivery" at vending_machine.vhd(70) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 70
-Info (10041): Inferred latch for "machine_state.UserTransaction" at vending_machine.vhd(70) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 70
-Info (10041): Inferred latch for "machine_state.Cancel" at vending_machine.vhd(70) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 70
-Info (10041): Inferred latch for "machine_state.Idle" at vending_machine.vhd(70) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 70
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 65
-Warning (10631): VHDL Process Statement warning at debounce.vhd(20): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 20
-Info (10041): Inferred latch for "old_btn" at debounce.vhd(27) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 27
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 662 megabytes
-    Info: Processing ended: Wed Nov 29 19:39:36 2017
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:21
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(40): object "db_reset" assigned a value but never read File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(48): object "old_choose_coin" assigned a value but never read File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at vending_machine.vhd(51): object "cost_amt" assigned a value but never read File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 51
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at debounce.vhd(20): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 20
+Info (10041): Inferred latch for "old_btn" at debounce.vhd(27) File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 27
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 667 megabytes
+    Info: Processing ended: Fri Dec 01 11:31:28 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:35
 
 
