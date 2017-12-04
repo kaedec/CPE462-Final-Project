@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.21)  29 NOV 2017 15:19
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.21)  3 DEC 2017 19:12
 entering extended mode
-**./Proj3_Katelyn_Charbonneau.tex
-(Proj3_Katelyn_Charbonneau.tex
+**./Final_Katelyn_Charbonneau.tex
+(Final_Katelyn_Charbonneau.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -205,8 +205,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-(Proj3_Katelyn_Charbonneau.aux)
-\openout1 = `Proj3_Katelyn_Charbonneau.aux'.
+(Final_Katelyn_Charbonneau.aux)
+\openout1 = `Final_Katelyn_Charbonneau.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -225,27 +225,43 @@ LaTeX Font Info:    ... okay on input line 23.
 File: wne.eps Graphic file (type eps)
  <wne.eps>
 File: department.eps Graphic file (type eps)
- <department.eps> [1
+ <department.eps>
+File: grading.png Graphic file (type QTm)
+
+<use  "grading.png" > [1
 
 ]
+File: StateDiagram.png Graphic file (type QTm)
+ <use  "StateDiagram.png" > [2]
+File: debounce_sim.png Graphic file (type QTm)
 
-LaTeX Warning: Reference `fig:toplevel' on page 2 undefined on input line 55.
+<use  "debounce_sim.png" > [3]
+File: ----.png Graphic file (type QTm)
+ <use  "----.png" >
+File: C195.png Graphic file (type QTm)
+ <use  "C195.png" >
+File: C185.png Graphic file (type QTm)
 
+<use  "C185.png" > [4]
+File: C160.png Graphic file (type QTm)
+ <use  "C160.png" >
+File: C60.png Graphic file (type QTm)
+ <use  "C60.png" >
+File: C40Delivery.png Graphic file (type QTm)
 
-LaTeX Warning: Reference `fig:debounce' on page 2 undefined on input line 71.
-
-[2] [3] [4] [5] [6] (Proj3_Katelyn_Charbonneau.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+<use  "C40Delivery.png" >
+File: C---.png Graphic file (type QTm)
+ <use  "C---.png" > [5]
+File: P35.png Graphic file (type QTm)
+ <use  "P35.png" > [6] [7]
+(Final_Katelyn_Charbonneau.aux) ) 
 Here is how much of TeX's memory you used:
- 2874 strings out of 427834
- 34886 string characters out of 3152470
- 112169 words of memory out of 3000000
- 6832 multiletter control sequences out of 15000+200000
+ 2909 strings out of 427834
+ 35241 string characters out of 3152470
+ 114169 words of memory out of 3000000
+ 6854 multiletter control sequences out of 15000+200000
  3672 words of font info for 18 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 41i,5n,35p,1268b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,9n,35p,1093b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Proj3_Katelyn_Charbonneau.pdf (6 pages).
+Output written on Final_Katelyn_Charbonneau.pdf (7 pages).

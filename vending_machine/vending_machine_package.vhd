@@ -8,10 +8,6 @@ PACKAGE vending_machine_package IS
 --States; real-world names for easy understanding
 	TYPE MCH_STATE IS (Idle, Cancel, UserTransaction, Delivery);
 -------------------------------------------------------------------------------
-	TYPE PROD_STATE IS (Pepsi, Gum, Coffee, Water);
--------------------------------------------------------------------------------
-	TYPE C_STATE IS (Dime, Quarter, Dollar);
--------------------------------------------------------------------------------
 --Record Information
 --Records are similar to structs in C or dictionaries in Python
 	TYPE PRODUCT_INFO IS RECORD
@@ -20,14 +16,13 @@ PACKAGE vending_machine_package IS
 		Price: NATURAL RANGE 85 TO 195;
 	END RECORD;
 -------------------------------------------------------------------------------
---	TYPE PRODUCT_ARRAY IS ARRAY (PROD_STATE) OF PRODUCT_INFO;
--------------------------------------------------------------------------------
 --Used for debouncing switches
 	COMPONENT debounce IS
 		PORT(btn, clk: IN STD_LOGIC;
 				debounced: OUT STD_LOGIC);
 	END COMPONENT;
 -------------------------------------------------------------------------------
+--Integer indexer; see money_indexer.vhd
 	COMPONENT money_indexer IS
 		PORT(input: IN NATURAL RANGE 0 TO 999;
 			out_h, out_t, out_o: OUT NATURAL RANGE 0 TO 10);
@@ -48,12 +43,16 @@ END vending_machine_package;
 -------------------------------------------------------------------------------
 PACKAGE BODY vending_machine_package IS
 -------------------------------------------------------------------------------
+--This function was modified for this project to support and input of 10.
+--This input functions as a way to pass the dash shape to the displays
+--as required by certan behaviors of the project.
+
 	FUNCTION dispSSD (SIGNAL S: NATURAL) RETURN STD_LOGIC_VECTOR IS
-	
+
 	VARIABLE F: STD_LOGIC_VECTOR(0 TO 6);
-	
+
 	BEGIN
-	
+
 	CASE S IS
 		WHEN 0 => F := "0000001";
 		WHEN 1 => F := "1001111";
@@ -75,31 +74,31 @@ PACKAGE BODY vending_machine_package IS
 	FUNCTION dispSSD_A (SIGNAL S: CHARACTER) RETURN STD_LOGIC_VECTOR IS
 
 	VARIABLE F: STD_LOGIC_VECTOR(0 TO 6);
-	
+
 	BEGIN
-	
+
 	CASE S IS
 		WHEN 'P' => F := "0011000";
 		WHEN 'G' => F := "0100000";
-		WHEN 'C'	=> F := "0110001";
+		WHEN 'C' => F := "0110001";
 		WHEN 'b' => F := "1100000";
 		WHEN 'I' => F := "1111110";
 		WHEN OTHERS => F := "0110110";
 	END CASE;
-	
+
 	RETURN F;
 	END FUNCTION dispSSD_A;
 -------------------------------------------------------------------------------
 	FUNCTION button_pressed (SIGNAL old_btn, btn: STD_LOGIC) RETURN BOOLEAN IS
-	
+
 	BEGIN
-	
+
 	IF (old_btn /= btn AND btn='0') THEN
 		RETURN TRUE;
 	ELSE
 		RETURN FALSE;
 	END IF;
-	
+
 	END FUNCTION button_pressed;
 -------------------------------------------------------------------------------
 END vending_machine_package;

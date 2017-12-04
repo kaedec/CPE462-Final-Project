@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vending_machine
-Sun Dec 03 13:02:42 2017
+Sun Dec 03 14:50:16 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 03 13:02:41 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 03 14:50:16 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
@@ -493,7 +493,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -503,7 +503,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Dec 03 13:02:22 2017
+    Info: Processing started: Sun Dec 03 14:50:02 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -515,23 +515,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file debounc
     Info (12023): Found entity 1: debounce File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 4
 Info (12021): Found 2 design units, including 0 entities, in source file vending_machine_package.vhd
     Info (12022): Found design unit 1: vending_machine_package File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
-    Info (12022): Found design unit 2: vending_machine_package-body File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 49
+    Info (12022): Found design unit 2: vending_machine_package-body File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file money_indexer.vhd
-    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 11
-    Info (12023): Found entity 1: money_indexer File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 5
+    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 26
+    Info (12023): Found entity 1: money_indexer File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 68
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 77
 Warning (10631): VHDL Process Statement warning at debounce.vhd(20): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 20
 Info (10041): Inferred latch for "old_btn" at debounce.vhd(27) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 27
-Info (12128): Elaborating entity "money_indexer" for hierarchy "money_indexer:indexing" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 73
+Info (12128): Elaborating entity "money_indexer" for hierarchy "money_indexer:indexing" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 82
 Info (278001): Inferred 5 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 21
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -546,8 +546,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 15
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -558,14 +558,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
     Info (12023): Found entity 1: alt_u_div_27f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -576,8 +576,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_klh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s6f.tdf
     Info (12023): Found entity 1: alt_u_div_s6f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 21
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod2" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 21
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod2" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -596,9 +596,9 @@ Info (21057): Implemented 1090 device resources after synthesis - the final reso
     Info (21059): Implemented 29 output pins
     Info (21061): Implemented 1053 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 692 megabytes
-    Info: Processing ended: Sun Dec 03 13:02:42 2017
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 700 megabytes
+    Info: Processing ended: Sun Dec 03 14:50:16 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:22
 
 
