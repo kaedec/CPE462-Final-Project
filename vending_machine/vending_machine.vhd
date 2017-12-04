@@ -26,6 +26,10 @@ ARCHITECTURE vending_machine_arch OF vending_machine IS
 CONSTANT divider: INTEGER := 25000000; --1 second clock
 
 --Product Information
+
+--A record was made to contain the constant product information in an
+--easy to access and easy to read manner
+
 --PRODUCT_SELECT, ABBREVIATION, PRICE
 CONSTANT Pepsi: PRODUCT_INFO :=
 	("00", 'P', 145);
@@ -41,19 +45,24 @@ SIGNAL db_choose_product, db_choose_coin, db_reset: STD_LOGIC;
 
 --State machines
 SIGNAL machine_state: MCH_STATE;
-SIGNAL product_state: PROD_STATE;
-SIGNAL coin_state: C_STATE;
 
 --Previous values for push buttons
 SIGNAL old_choose_product, old_choose_coin, old_reset: STD_LOGIC := '0';
 
---Costs
+--Transaction information
+
+--price_disp is the single signal that is ultimately passed to the output ports
+--it takes the value of some function of (cost_amt, paid_amt), depending on
+--how the system is behaving at the time.
+
 SIGNAL cost_amt: NATURAL RANGE 85 TO 195 := 85;
 SIGNAL paid_amt: INTEGER RANGE 0 TO 999 := 0;
-SIGNAL return_amt: INTEGER RANGE 0 TO 999 := 0;
 SIGNAL price_disp: INTEGER RANGE 0 TO 999 := 0;
 
 --Hex Display Signals
+--hex5 is for the product abbreviation
+--hexes 2, 1, and 0 are for money displays
+
 SIGNAL hex5: CHARACTER;
 SIGNAL hex2, hex1, hex0: NATURAL RANGE 0 TO 10;
 
@@ -80,6 +89,7 @@ PROCESS(clock_50MHz, reset)
 VARIABLE count: NATURAL := 0;
 VARIABLE delivery_count: NATURAL := 0;
 
+--For functionality during UserTransaction state
 VARIABLE temp_price_disp: INTEGER RANGE 0 TO 999 := 0;
 VARIABLE transaction_time: STD_LOGIC := '0';
 
@@ -93,6 +103,12 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 	
 	cASE machine_state IS
 -------------------------------------------------------------------------------
+--In Idle state, following behavior is desired:
+--		~Hex 5/2/1/0 display dashes "----"
+--		~Wait for user to choose their product, and display that product's
+--			information on Hex 5 and Hex 2/1/0
+--		~Transition to UserTransaction state when product is chosen
+
 		WHEN Idle =>
 		
 			paid_amt <= 0;
@@ -126,6 +142,10 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 				price_disp <= 999;
 			END IF;
 -------------------------------------------------------------------------------
+--In Cancel state, following behavior is desired:
+--		~Display amount of money to be returned on Hex 2/1/0
+--		~When timer expires, revert to Idle state
+
 		WHEN Cancel =>
 			count := count+1;
 			
@@ -136,6 +156,14 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 				machine_state <= Idle;
 			END IF;
 -------------------------------------------------------------------------------
+--In UserTransaction state, following behavior is desired:
+--		~Display how much money is left in order to pay for the product on Hex 2/1/0
+--		~Detect which coin is inserted and subtract 10/25/100 cents from what is left, respectively
+--		~Detect when invalid coin is inserted, and display dashes "---" on Hex 2/1/0
+--			until timer expires, then continue to display price
+--		~When customer inserts coins of enough value to purchase the product, transition to Delivery state
+--		~When customer cancels the transaction, transition to Cancel state
+
 		WHEN UserTransaction =>
 		
 			IF(button_pressed(old_reset, db_reset)) THEN
@@ -181,11 +209,16 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 				END IF;
 			END IF;
 -------------------------------------------------------------------------------
+--In Delivery state, following behavior is desired:
+--		~Display Change on hex2/1/0
+--		~Blink delivery LEDG8 while delivery is in process
+--		~when timer expires, revert to Idle state
+
 		WHEN Delivery =>
 			
-			price_disp <= paid_amt - cost_amt;
+			price_disp <= paid_amt - cost_amt; -- Change
 			
-			count := count+1;
+			count := count+1; --Simple counter for the LED blinking a number of times
 			IF(count=divider*2) THEN
 			
 				dLed <= NOT dLed;
@@ -206,6 +239,9 @@ END IF;
 END PROCESS;
 -------------------------------------------------------------------------------
 --Concurrent output declarations
+--State machines should only assign values to the output ports via concurrent
+--statements using signals to pass values out of the process
+
 p_name_abbrv <= dispSSD_A(hex5);
 coin_display2 <= dispSSD(hex2);
 coin_display1 <= dispSSD(hex1);
