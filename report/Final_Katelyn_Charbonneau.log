@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.12.6)  6 DEC 2017 09:33
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.21)  7 DEC 2017 15:38
 entering extended mode
 **./Final_Katelyn_Charbonneau.tex
 (Final_Katelyn_Charbonneau.tex
@@ -60,7 +60,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\cite\cite.sty"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
@@ -68,7 +68,7 @@ Package: cite 2015/02/27  v 5.5
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip43
 \subfigcapskip=\skip44
@@ -84,11 +84,10 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.cfg)
 \subfig@top=\skip47
 \subfig@bottom=\skip48
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen109
 \extrarowheight=\dimen110
@@ -104,7 +103,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks18
 \@floatcapt=\box27
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip51
 \enit@outerparindent=\dimen111
@@ -115,10 +114,10 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\shipunov\boldline.sty"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\shipunov\boldline.sty
 Package: boldline 2008/02/04 v0.2 Adjust line width in tables
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
@@ -127,7 +126,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package xcolor Info: Package option `usenames' ignored on input line 216.
 Package xcolor Info: Driver file: xetex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks20
 \minrowclearance=\skip52
@@ -145,7 +144,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\svgnam.def"
+(C:\Users\Katelyn\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\svgnam.def
 File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
@@ -323,14 +322,17 @@ File: C---.png Graphic file (type QTm)
 
 <use  "C---.png" > [5]
 File: P35.png Graphic file (type QTm)
- <use  "P35.png" > [6] [7] (Final_Katelyn_Charbonneau.aux) ) 
+ <use  "P35.png" > [6] [7]
+File: BlockDiagram.png Graphic file (type QTm)
+ <use  "BlockDiagram.png" >
+[8] (Final_Katelyn_Charbonneau.aux) ) 
 Here is how much of TeX's memory you used:
- 3447 strings out of 427834
- 42688 string characters out of 3152470
- 128592 words of memory out of 3000000
- 7360 multiletter control sequences out of 15000+200000
+ 3451 strings out of 427834
+ 42873 string characters out of 3152470
+ 128610 words of memory out of 3000000
+ 7363 multiletter control sequences out of 15000+200000
  8317 words of font info for 36 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  41i,12n,35p,1093b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Final_Katelyn_Charbonneau.pdf (7 pages).
+Output written on Final_Katelyn_Charbonneau.pdf (8 pages).
