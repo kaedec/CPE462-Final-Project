@@ -9,6 +9,8 @@
 \usepackage{boldline}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+\geometry{top=1.in, bottom=1in, left=1in, right=1in}
 
 %%% Use these when running Text Verifications
 %\usepackage[T1]{fontenc}        
@@ -18,34 +20,75 @@
 
 \voffset=0in \hoffset=0in \textwidth=6.3in \textheight=8.3in
 \setlength{\oddsidemargin}{0in} \setlength{\textwidth}{6 in}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{M}[1]{>{\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
 \thispagestyle{empty}
 
 \begin{document}
 
+%%%Header
 \begin{figure*}[htb]
 \subfigure{\includegraphics[width=2.5in]{wne.eps} }
 \hfil \hspace{.5in}
 \subfigure{\includegraphics[width=2.5in]{department.eps} }
 \end{figure*}
 
-%%%Header
+
+
+%%%Cover Page
 \begin{center}
 {\Large {\bf CPE 462/562 VHDL: Simulation \& Synthesis}}\\
 \vspace{0.2in}
-{\Large{Final Project: Vending Machine Design and Implementation}} \\
+Final Project - Fall 2017 \\ 
 \vspace{0.2in}
-
-%%%Cover Page
-Katelyn Charbonneau\\
+{\Large{Vending Machine Design, Verification, and Implementation}} \\
+\vspace{0.2in}
+Katelyn Charbonneau \\
 Email: kc325844@wne.edu\\
-Date: 12/8/2017\\
+Date: 12/8/2017
 \end{center}
 
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[scale=0.8914]{grading.png}
-\end{center}
-\end{figure}
+
+  
+\begin{table}[!h]
+\centering
+%\ \begin{tabular}{| >{\arraybackslash}m{4in}{1in} | >{\centering\arraybackslash}m{1in} | }
+\begin{tabular}{|M{10cm}|C{3cm}|N}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Tasks} & \textbf{Grades} \\ [20pt]
+  \hline
+Select product, choose to buy the product, and display product name and price (10') & \\ [30pt]
+
+  \hline
+
+  Cancel transaction, display returned amount, and show idle state (20') & \\ [30pt]
+
+  \hline
+  
+  Insert coins, display the left amount for purchase on SSD, and reject invalid coins (40') & \\ [30pt]
+
+  \hline
+
+  Deliver product, and display change on SSD (20') & \\ [30pt]
+  
+  \hline
+ 
+ Report (10') & \\ [30pt]
+ 
+  \hline
+    \hline
+
+ Total (100') & \\ [30pt]
+  
+  \hline
+\end{tabular}
+%\caption{}
+%\label{table_p1}
+\end{table}
 
 %%%Text Verifications
 %This text is \fontname\font\ with font size \csname f@size\endcsname{}
@@ -74,7 +117,7 @@ The first state that was designed was the Idle state.  For this state, a record 
 The idle state displays dashes (-) on all of the seven-segment displays (SSDs) used in the project (Hex 5, 2, 1, and 0).  When a user presses the product choose button (Key 3), the product abbreviation and price will take on the value of whichever product was selected with the switches (Switch 17 and 16), then transitions to the UserTransaction state.\par
 The UserTransaction state is the next that was developed.  It also contains most of the logic that dictates the behavior of the system.  For this system, a number of signals had to be declared to handle the operations required.  One signal is simply the price of the selected product.  Because it could be any of the four products offered, it had to be able to be changed; although it is not altered within this state (it is set in the Idle state).  The second signal is the amount of money that is the customer has inserted.  The third is a catch-all signal that is ultimately passed to the output ports of the system; this signal takes on a value of some function of the previous two signals and itself, depending.  When the user inserts a coin, the paid amount increases by that coin's value, and the display on the SSDs decreases by that coin's value.  When the paid amount is greater or equal to the cost amount, the state transition to Delivery occurs.  If the user presses the cancel button (Key 0), the state transition to the Cancel state occurs.\par
 The Cancel state is simple: it displays on the SSDs the amount of money to be returned.  This value is equal to the value of the paid amount signal.  After 5 seconds, the system will transition to the Idle state.  The Delivery state is also simple: it displays on the SSDs the amount of change to be returned.  This value is equal to the value of the paid amount minus cost amount.  The delivery LED will also blink 5 times, after which the system will transition to the Idle state.\par
-For simplicity, the values of the aforementioned signals involving money are all 3-digit (000 to 999) integer types.  A component was written to "index" into these values and take separate them into 3 1-digit integer types.  This was so they could easily be used for the SSD function.  The component uses the MOD operator and the divide operator (which floors the result) to do this.  In addition, the frequently used push button debouncer component was used for the buttons in this project.
+For simplicity, the values of the aforementioned signals involving money are all 3-digit (000 to 999) integer types.  A component was written to "index" into these values and separate them into 3 1-digit integer types.  This was so they could easily be used for the SSD function.  The component uses the MOD operator and the divide operator (which floors the result) to do this.  In addition, the frequently used push button debouncer component was used for the buttons in this project.
 
 \section{Simulation Results} \label{simresults}
 

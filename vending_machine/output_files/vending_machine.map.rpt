@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vending_machine
-Sun Dec 03 14:50:16 2017
+Wed Dec 06 11:16:24 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -53,15 +53,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 03 14:50:16 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 06 11:16:23 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; vending_machine                             ;
 ; Top-level Entity Name              ; vending_machine                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 904                                         ;
-;     Total combinational functions  ; 899                                         ;
-;     Dedicated logic registers      ; 210                                         ;
-; Total registers                    ; 210                                         ;
+; Total logic elements               ; 909                                         ;
+;     Total combinational functions  ; 902                                         ;
+;     Dedicated logic registers      ; 213                                         ;
+; Total registers                    ; 213                                         ;
 ; Total pins                         ; 37                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -161,16 +161,16 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -179,25 +179,25 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                           ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
-; vending_machine.vhd              ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd         ;         ;
-; debounce.vhd                     ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd                ;         ;
-; vending_machine_package.vhd      ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd ;         ;
-; money_indexer.vhd                ; yes             ; User VHDL File               ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd           ;         ;
+; vending_machine.vhd              ; yes             ; User VHDL File               ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd         ;         ;
+; debounce.vhd                     ; yes             ; User VHDL File               ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd                ;         ;
+; vending_machine_package.vhd      ; yes             ; User VHDL File               ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd ;         ;
+; money_indexer.vhd                ; yes             ; User VHDL File               ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd           ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf                                  ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc                                 ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc                             ;         ;
 ; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                                  ;         ;
-; db/lpm_divide_ccm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_ccm.tdf       ;         ;
-; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_1nh.tdf  ;         ;
-; db/alt_u_div_m9f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_m9f.tdf        ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf          ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf          ;         ;
-; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_vim.tdf       ;         ;
-; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf  ;         ;
-; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf        ;         ;
-; db/lpm_divide_sim.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_sim.tdf       ;         ;
-; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf  ;         ;
-; db/alt_u_div_s6f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf        ;         ;
+; db/lpm_divide_ccm.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_ccm.tdf       ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_1nh.tdf  ;         ;
+; db/alt_u_div_m9f.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_m9f.tdf        ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf          ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf          ;         ;
+; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_vim.tdf       ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf  ;         ;
+; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf        ;         ;
+; db/lpm_divide_sim.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_sim.tdf       ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf  ;         ;
+; db/alt_u_div_s6f.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf        ;         ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -206,20 +206,20 @@ agreement for further details.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimated Total logic elements              ; 904               ;
+; Estimated Total logic elements              ; 909               ;
 ;                                             ;                   ;
-; Total combinational functions               ; 899               ;
+; Total combinational functions               ; 902               ;
 ; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 301               ;
+;     -- 4 input functions                    ; 304               ;
 ;     -- 3 input functions                    ; 143               ;
 ;     -- <=2 input functions                  ; 455               ;
 ;                                             ;                   ;
 ; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 559               ;
+;     -- normal mode                          ; 562               ;
 ;     -- arithmetic mode                      ; 340               ;
 ;                                             ;                   ;
-; Total registers                             ; 210               ;
-;     -- Dedicated logic registers            ; 210               ;
+; Total registers                             ; 213               ;
+;     -- Dedicated logic registers            ; 213               ;
 ;     -- I/O registers                        ; 0                 ;
 ;                                             ;                   ;
 ; I/O pins                                    ; 37                ;
@@ -227,9 +227,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0                 ;
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; clock_50MHz~input ;
-; Maximum fan-out                             ; 210               ;
-; Total fan-out                               ; 3152              ;
-; Average fan-out                             ; 2.66              ;
+; Maximum fan-out                             ; 213               ;
+; Total fan-out                               ; 3171              ;
+; Average fan-out                             ; 2.67              ;
 +---------------------------------------------+-------------------+
 
 
@@ -238,7 +238,7 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |vending_machine                          ; 899 (332)           ; 210 (111)                 ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |vending_machine                                                                                                                        ; vending_machine     ; work         ;
+; |vending_machine                          ; 902 (335)           ; 213 (114)                 ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |vending_machine                                                                                                                        ; vending_machine     ; work         ;
 ;    |debounce:key0|                        ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|debounce:key0                                                                                                          ; debounce            ; work         ;
 ;    |debounce:key2|                        ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|debounce:key2                                                                                                          ; debounce            ; work         ;
 ;    |debounce:key3|                        ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vending_machine|debounce:key3                                                                                                          ; debounce            ; work         ;
@@ -285,8 +285,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+-------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
 +----------------------------------------------------+-------------------------+------------------------+
-; debounce:key3|old_btn                              ; debounce:key3|process_0 ; yes                    ;
 ; debounce:key2|old_btn                              ; debounce:key2|process_0 ; yes                    ;
+; debounce:key3|old_btn                              ; debounce:key3|process_0 ; yes                    ;
 ; debounce:key0|old_btn                              ; debounce:key0|process_0 ; yes                    ;
 ; Number of user-specified and inferred latches = 3  ;                         ;                        ;
 +----------------------------------------------------+-------------------------+------------------------+
@@ -312,12 +312,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 210   ;
+; Total registers                              ; 213   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 96    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Clock Enable       ; 89    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -343,7 +343,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 11:1               ; 3 bits    ; 21 LEs        ; 12 LEs               ; 9 LEs                  ; Yes        ; |vending_machine|price_disp[7]   ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |vending_machine|paid_amt        ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |vending_machine|temp_price_disp ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |vending_machine|Selector20      ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |vending_machine|Selector21      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -468,23 +468,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 210                         ;
+; cycloneiii_ff         ; 213                         ;
 ;     CLR               ; 96                          ;
-;     ENA               ; 88                          ;
-;     plain             ; 26                          ;
-; cycloneiii_lcell_comb ; 903                         ;
+;     ENA               ; 89                          ;
+;     plain             ; 28                          ;
+; cycloneiii_lcell_comb ; 906                         ;
 ;     arith             ; 340                         ;
 ;         2 data inputs ; 222                         ;
 ;         3 data inputs ; 118                         ;
-;     normal            ; 563                         ;
+;     normal            ; 566                         ;
 ;         0 data inputs ; 23                          ;
 ;         1 data inputs ; 18                          ;
 ;         2 data inputs ; 196                         ;
 ;         3 data inputs ; 25                          ;
-;         4 data inputs ; 301                         ;
+;         4 data inputs ; 304                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 28.30                       ;
-; Average LUT depth     ; 12.85                       ;
+; Average LUT depth     ; 12.91                       ;
 +-----------------------+-----------------------------+
 
 
@@ -493,7 +493,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -503,102 +503,102 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Dec 03 14:50:02 2017
+    Info: Processing started: Wed Dec 06 11:15:59 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vending_machine -c vending_machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vending_machine.vhd
-    Info (12022): Found design unit 1: vending_machine-vending_machine_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 22
-    Info (12023): Found entity 1: vending_machine File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 7
+    Info (12022): Found design unit 1: vending_machine-vending_machine_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 22
+    Info (12023): Found entity 1: vending_machine File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
-    Info (12022): Found design unit 1: debounce-debounce_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 10
-    Info (12023): Found entity 1: debounce File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 4
+    Info (12022): Found design unit 1: debounce-debounce_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
+    Info (12023): Found entity 1: debounce File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 16
 Info (12021): Found 2 design units, including 0 entities, in source file vending_machine_package.vhd
-    Info (12022): Found design unit 1: vending_machine_package File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
-    Info (12022): Found design unit 2: vending_machine_package-body File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 44
+    Info (12022): Found design unit 1: vending_machine_package File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 6
+    Info (12022): Found design unit 2: vending_machine_package-body File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine_package.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file money_indexer.vhd
-    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 26
-    Info (12023): Found entity 1: money_indexer File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
+    Info (12022): Found design unit 1: money_indexer-money_indexer_arch File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 26
+    Info (12023): Found entity 1: money_indexer File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 18
 Info (12127): Elaborating entity "vending_machine" for the top level hierarchy
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 77
-Warning (10631): VHDL Process Statement warning at debounce.vhd(20): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 20
-Info (10041): Inferred latch for "old_btn" at debounce.vhd(27) File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 27
-Info (12128): Elaborating entity "money_indexer" for hierarchy "money_indexer:indexing" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 82
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:key3" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 80
+Warning (10631): VHDL Process Statement warning at debounce.vhd(31): inferring latch(es) for signal or variable "old_btn", which holds its previous value in one or more paths through the process File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 31
+Info (10041): Inferred latch for "old_btn" at debounce.vhd(38) File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 38
+Info (12128): Elaborating entity "money_indexer" for hierarchy "money_indexer:indexing" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 85
 Info (278001): Inferred 5 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod0" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div0" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod1" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Div1" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "money_indexer:indexing|Mod2" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod0" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod0" with the following parameter: File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ccm.tdf
-    Info (12023): Found entity 1: lpm_divide_ccm File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_ccm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_ccm File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_ccm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_1nh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_1nh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_1nh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m9f.tdf
-    Info (12023): Found entity 1: alt_u_div_m9f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_m9f.tdf Line: 27
+    Info (12023): Found entity 1: alt_u_div_m9f File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_m9f.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_7pc File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div0" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div0" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+    Info (12023): Found entity 1: add_sub_8pc File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div0" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div0" with the following parameter: File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 30
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vim.tdf
-    Info (12023): Found entity 1: lpm_divide_vim File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_vim.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_vim File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_vim.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_nlh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
-    Info (12023): Found entity 1: alt_u_div_27f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+    Info (12023): Found entity 1: alt_u_div_27f File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_27f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod1" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod1" with the following parameter: File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div1" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div1" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Div1" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Div1" with the following parameter: File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_sim.tdf
-    Info (12023): Found entity 1: lpm_divide_sim File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_sim.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_sim File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/lpm_divide_sim.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_klh File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_klh File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/sign_div_unsign_klh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_s6f.tdf
-    Info (12023): Found entity 1: alt_u_div_s6f File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod2" File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
-Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod2" with the following parameter: File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
+    Info (12023): Found entity 1: alt_u_div_s6f File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/db/alt_u_div_s6f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "money_indexer:indexing|lpm_divide:Mod2" File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
+Info (12133): Instantiated megafunction "money_indexer:indexing|lpm_divide:Mod2" with the following parameter: File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/money_indexer.vhd Line: 36
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Warning (13012): Latch debounce:key3|old_btn has unsafe behavior File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choose_product File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 11
-Warning (13012): Latch debounce:key2|old_btn has unsafe behavior File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal choose_coin File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 12
-Warning (13012): Latch debounce:key0|old_btn has unsafe behavior File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 24
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: F:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 13
+Warning (13012): Latch debounce:key2|old_btn has unsafe behavior File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 35
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal choose_coin File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 12
+Warning (13012): Latch debounce:key3|old_btn has unsafe behavior File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 35
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal choose_product File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 11
+Warning (13012): Latch debounce:key0|old_btn has unsafe behavior File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/debounce.vhd Line: 35
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: E:/New Schoolwork/Fall 2017/VHDL/Final_Katelyn_Charbonneau/vending_machine/vending_machine.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1090 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1095 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 1053 logic cells
+    Info (21061): Implemented 1058 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 700 megabytes
-    Info: Processing ended: Sun Dec 03 14:50:16 2017
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 717 megabytes
+    Info: Processing ended: Wed Dec 06 11:16:24 2017
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:38
 
 

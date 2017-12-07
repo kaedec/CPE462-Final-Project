@@ -3,48 +3,48 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock_50MHz'
-Slack : -7.249
-TNS   : -750.945
-
-Type  : Slow 1200mV 85C Model Setup 'choose_product'
-Slack : -1.381
-TNS   : -1.381
+Slack : -6.801
+TNS   : -709.669
 
 Type  : Slow 1200mV 85C Model Setup 'reset'
-Slack : -0.266
-TNS   : -0.266
+Slack : -1.412
+TNS   : -1.412
+
+Type  : Slow 1200mV 85C Model Setup 'choose_product'
+Slack : -0.907
+TNS   : -0.907
 
 Type  : Slow 1200mV 85C Model Setup 'choose_coin'
-Slack : 0.203
-TNS   : 0.000
+Slack : -0.238
+TNS   : -0.238
 
 Type  : Slow 1200mV 85C Model Hold 'choose_coin'
-Slack : -0.476
-TNS   : -0.476
-
-Type  : Slow 1200mV 85C Model Hold 'reset'
-Slack : -0.152
-TNS   : -0.152
+Slack : -0.176
+TNS   : -0.176
 
 Type  : Slow 1200mV 85C Model Hold 'clock_50MHz'
-Slack : 0.386
+Slack : 0.385
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'choose_product'
-Slack : 0.665
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'reset'
+Slack : 0.965
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clock_50MHz'
-Slack : -2.958
-TNS   : -275.996
+Slack : -2.813
+TNS   : -266.944
 
 Type  : Slow 1200mV 85C Model Removal 'clock_50MHz'
-Slack : 1.557
+Slack : 1.702
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50MHz'
 Slack : -3.000
-TNS   : -272.850
+TNS   : -276.705
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'choose_coin'
 Slack : -3.000
@@ -59,48 +59,48 @@ Slack : -3.000
 TNS   : -3.000
 
 Type  : Slow 1200mV 0C Model Setup 'clock_50MHz'
-Slack : -6.440
-TNS   : -658.216
-
-Type  : Slow 1200mV 0C Model Setup 'choose_product'
-Slack : -1.331
-TNS   : -1.331
+Slack : -6.093
+TNS   : -626.486
 
 Type  : Slow 1200mV 0C Model Setup 'reset'
-Slack : -0.278
-TNS   : -0.278
+Slack : -1.341
+TNS   : -1.341
+
+Type  : Slow 1200mV 0C Model Setup 'choose_product'
+Slack : -0.874
+TNS   : -0.874
 
 Type  : Slow 1200mV 0C Model Setup 'choose_coin'
-Slack : 0.171
-TNS   : 0.000
+Slack : -0.220
+TNS   : -0.220
 
 Type  : Slow 1200mV 0C Model Hold 'choose_coin'
-Slack : -0.437
-TNS   : -0.437
-
-Type  : Slow 1200mV 0C Model Hold 'reset'
-Slack : -0.145
-TNS   : -0.145
+Slack : -0.161
+TNS   : -0.161
 
 Type  : Slow 1200mV 0C Model Hold 'clock_50MHz'
 Slack : 0.338
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'choose_product'
-Slack : 0.595
+Slack : 0.412
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'reset'
+Slack : 0.865
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clock_50MHz'
-Slack : -2.686
-TNS   : -250.192
+Slack : -2.608
+TNS   : -243.056
 
 Type  : Slow 1200mV 0C Model Removal 'clock_50MHz'
-Slack : 1.466
+Slack : 1.565
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50MHz'
 Slack : -3.000
-TNS   : -272.850
+TNS   : -276.705
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'choose_coin'
 Slack : -3.000
@@ -115,48 +115,48 @@ Slack : -3.000
 TNS   : -3.000
 
 Type  : Fast 1200mV 0C Model Setup 'clock_50MHz'
-Slack : -3.052
-TNS   : -268.140
-
-Type  : Fast 1200mV 0C Model Setup 'choose_product'
-Slack : -0.038
-TNS   : -0.038
+Slack : -2.893
+TNS   : -251.439
 
 Type  : Fast 1200mV 0C Model Setup 'reset'
-Slack : 0.509
+Slack : -0.110
+TNS   : -0.110
+
+Type  : Fast 1200mV 0C Model Setup 'choose_product'
+Slack : 0.192
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'choose_coin'
-Slack : 0.729
+Slack : 0.515
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'choose_coin'
-Slack : -0.219
-TNS   : -0.219
-
-Type  : Fast 1200mV 0C Model Hold 'reset'
-Slack : -0.062
-TNS   : -0.062
+Slack : -0.084
+TNS   : -0.084
 
 Type  : Fast 1200mV 0C Model Hold 'clock_50MHz'
-Slack : 0.084
+Slack : 0.092
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'choose_product'
-Slack : 0.418
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'reset'
+Slack : 0.508
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clock_50MHz'
-Slack : -1.609
-TNS   : -148.452
+Slack : -1.513
+TNS   : -142.208
 
 Type  : Fast 1200mV 0C Model Removal 'clock_50MHz'
-Slack : 0.575
+Slack : 0.615
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50MHz'
 Slack : -3.000
-TNS   : -226.667
+TNS   : -230.591
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'choose_coin'
 Slack : -3.000

@@ -140,15 +140,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "choose_product",
-					"strict" : false
-				},
-				{
 					"name" : "choose_coin",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "choose_product",
 					"strict" : false
 				}
 			]

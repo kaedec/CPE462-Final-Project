@@ -49,6 +49,9 @@ SIGNAL machine_state: MCH_STATE;
 --Previous values for push buttons
 SIGNAL old_choose_product, old_choose_coin, old_reset: STD_LOGIC := '0';
 
+--Previous values for switches
+SIGNAL old_product_select: STD_LOGIC_VECTOR(17 DOWNTO 16) := "00";
+
 --Transaction information
 
 --price_disp is the single signal that is ultimately passed to the output ports
@@ -93,6 +96,9 @@ VARIABLE delivery_count: NATURAL := 0;
 VARIABLE temp_price_disp: INTEGER RANGE 0 TO 999 := 0;
 VARIABLE transaction_time: STD_LOGIC := '0';
 
+--For functionality during Idle state
+VARIABLE switches_changed: STD_LOGIC := '0';
+
 BEGIN
 
 IF(RISING_EDGE(clock_50MHz)) THEN
@@ -100,6 +106,7 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 	old_choose_product <= db_choose_product;	--These are used as dummies because we
 	old_choose_coin <= db_choose_coin;			--cannot have signals depend on two "clock" 'EDGES
 	old_reset <= db_reset;
+	old_product_select <= product_select;
 	
 	cASE machine_state IS
 -------------------------------------------------------------------------------
@@ -113,7 +120,14 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 		
 			paid_amt <= 0;
 			
-			IF(button_pressed(old_choose_product, db_choose_product)) THEN
+			IF(button_pressed(old_product_select(17), product_select(17)) OR
+				button_pressed(old_product_select(16), product_select(16))) THEN
+				
+				switches_changed := '1';
+			END IF;
+			
+			IF(switches_changed='1') THEN
+			
 				CASE product_select IS
 					WHEN Pepsi.product_select =>
 						hex5 <= Pepsi.abbreviation;
@@ -136,10 +150,16 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 						price_disp <= Water.price;
 
 				END CASE;
-				machine_state <= UserTransaction;
-			ELSE
+			
+			ELSIF(switches_changed='0') THEN
 				hex5 <= 'I';
 				price_disp <= 999;
+			END IF;
+			
+			IF(button_pressed(old_choose_product, db_choose_product)
+				AND db_choose_product='0' AND switches_changed='1') THEN
+				machine_state <= UserTransaction;
+				switches_changed := '0';
 			END IF;
 -------------------------------------------------------------------------------
 --In Cancel state, following behavior is desired:
@@ -166,7 +186,7 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 
 		WHEN UserTransaction =>
 		
-			IF(button_pressed(old_reset, db_reset)) THEN
+			IF(button_pressed(old_reset, db_reset) AND db_reset='0') THEN
 				machine_state <= Cancel;
 			END IF;
 			
@@ -174,7 +194,7 @@ IF(RISING_EDGE(clock_50MHz)) THEN
 				machine_state <= Delivery;
 			END IF;
 			
-			IF(button_pressed(old_choose_coin, db_choose_coin)) THEN
+			IF(button_pressed(old_choose_coin, db_choose_coin) AND db_choose_coin='0') THEN
 				CASE coin_select IS
 				
 					WHEN "00" => -- Invalid

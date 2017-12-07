@@ -16,7 +16,7 @@ PACKAGE vending_machine_package IS
 		Price: NATURAL RANGE 85 TO 195;
 	END RECORD;
 -------------------------------------------------------------------------------
---Used for debouncing switches
+--Used for debouncing switches; see debounce.vdh
 	COMPONENT debounce IS
 		PORT(btn, clk: IN STD_LOGIC;
 				debounced: OUT STD_LOGIC);
@@ -28,13 +28,13 @@ PACKAGE vending_machine_package IS
 			out_h, out_t, out_o: OUT NATURAL RANGE 0 TO 10);
 	END COMPONENT;
 -------------------------------------------------------------------------------
---Seven-Segment Display logic
+--Seven-Segment Display logic, converts integer to STD_LOGIC
 	FUNCTION dispSSD (SIGNAL S: NATURAL) RETURN STD_LOGIC_VECTOR;
 -------------------------------------------------------------------------------
+--Seven-Segment Display logic, converts character to STD_LOGIC
 	FUNCTION dispSSD_A (SIGNAL S: CHARACTER) RETURN STD_LOGIC_VECTOR;
 -------------------------------------------------------------------------------
---Custom edge checker w/o 'EDGE attribute, also checks for ='0' because these
---push buttons are all active low
+--Custom edge checker w/o 'EDGE attribute
 	FUNCTION button_pressed (SIGNAL old_btn, btn: STD_LOGIC) RETURN BOOLEAN;
 -------------------------------------------------------------------------------
 END vending_machine_package;
@@ -46,6 +46,7 @@ PACKAGE BODY vending_machine_package IS
 --This function was modified for this project to support and input of 10.
 --This input functions as a way to pass the dash shape to the displays
 --as required by certan behaviors of the project.
+--Errors or garbage values display 3 dashes stacked on top of eachother
 
 	FUNCTION dispSSD (SIGNAL S: NATURAL) RETURN STD_LOGIC_VECTOR IS
 
@@ -78,11 +79,11 @@ PACKAGE BODY vending_machine_package IS
 	BEGIN
 
 	CASE S IS
-		WHEN 'P' => F := "0011000";
-		WHEN 'G' => F := "0100000";
-		WHEN 'C' => F := "0110001";
-		WHEN 'b' => F := "1100000";
-		WHEN 'I' => F := "1111110";
+		WHEN 'P' => F := "0011000"; --Pepsi
+		WHEN 'G' => F := "0100000"; --Gum
+		WHEN 'C' => F := "0110001"; --Coffee
+		WHEN 'b' => F := "1100000"; --Bottled Water
+		WHEN 'I' => F := "1111110"; --Idle State
 		WHEN OTHERS => F := "0110110";
 	END CASE;
 
@@ -93,7 +94,7 @@ PACKAGE BODY vending_machine_package IS
 
 	BEGIN
 
-	IF (old_btn /= btn AND btn='0') THEN
+	IF (old_btn /= btn) THEN
 		RETURN TRUE;
 	ELSE
 		RETURN FALSE;
